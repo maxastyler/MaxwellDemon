@@ -4,8 +4,12 @@ float Vec2::length(){
     return sqrt(pow(x, 2)+pow(y, 2));
 };
 
+float Vec2::lengthSquare(){
+  return (pow(x, 2)+pow(y, 2));
+}
+
 void Vec2::normalise(){
-    float length = this->length(); 
+    float length = this->length();
     if (length==0){
     }
     else{
