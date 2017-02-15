@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include "Particle.hpp"
+#include "ParticleManager.hpp"
 #include <iostream>
 
 SDL_Window* window;
@@ -19,6 +20,10 @@ int main(int argc, char* args[]){
     while (SDL_PollEvent(&e)!=0){
       if (e.type==SDL_QUIT) running=false;
     }
+
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderClear(renderer);
+    SDL_RenderPresent(renderer);
   }
   close();
   return 0;
