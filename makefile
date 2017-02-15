@@ -2,9 +2,9 @@ CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
 SDLFLAGS=-lSDL2 -lSDL2_gfx
-SOURCES=main.cpp
+SOURCES=main.cpp Vector.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=boids
+EXECUTABLE=maxwell_demon
 
 all: $(SOURCES) $(EXECUTABLE)
 
