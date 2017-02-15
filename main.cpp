@@ -6,14 +6,18 @@
 
 SDL_Window* window;
 SDL_Renderer* renderer;
-int SCREEN_WIDTH=640;
-int SCREEN_HEIGHT=480;
 bool init();
 void close();
+SDL_Rect screen_rect;
 
 using namespace std;
 
 int main(int argc, char* args[]){
+  screen_rect.x=0;
+  screen_rect.y=0;
+  screen_rect.w=640;
+  screen_rect.h=480;
+  ParticleManager partMan(screen_rect);
   bool running = init();
   SDL_Event e;
   while (running){
@@ -23,6 +27,7 @@ int main(int argc, char* args[]){
 
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
+    partMan.renderParticles(renderer);
     SDL_RenderPresent(renderer);
   }
   close();
@@ -37,7 +42,7 @@ bool init(){
     }
   else
     {
-      window = SDL_CreateWindow("MaxwellDemon", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+      window = SDL_CreateWindow("MaxwellDemon", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, screen_rect.w, screen_rect.h, SDL_WINDOW_SHOWN);
       if (window==NULL){
         success=false;
       }
