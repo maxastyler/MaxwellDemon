@@ -1,8 +1,8 @@
 CC=g++
 CFLAGS=-c -Wall
-LDFLAGS= 
+LDFLAGS=
 SDLFLAGS=-lSDL2 -lSDL2_gfx
-SOURCES=main.cpp Boid.cpp Vector.cpp BoidManager.cpp Clock.cpp Helpers.cpp
+SOURCES=main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=boids
 
