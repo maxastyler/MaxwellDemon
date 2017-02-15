@@ -2,7 +2,7 @@ CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
 SDLFLAGS=-lSDL2 -lSDL2_gfx
-SOURCES=main.cpp Vector.cpp
+SOURCES=main.cpp Vector.cpp Particle.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=maxwell_demon
 
