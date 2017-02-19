@@ -17,7 +17,7 @@ int main(int argc, char* args[]){
   screen_rect.y=0;
   screen_rect.w=640;
   screen_rect.h=480;
-  ParticleManager partMan(screen_rect);
+  ParticleManager partMan(screen_rect, 100);
   bool running = init();
   SDL_Event e;
   while (running){
@@ -29,6 +29,7 @@ int main(int argc, char* args[]){
     SDL_RenderClear(renderer);
     partMan.renderParticles(renderer);
     SDL_RenderPresent(renderer);
+    partMan.updateParticles();
   }
   close();
   return 0;

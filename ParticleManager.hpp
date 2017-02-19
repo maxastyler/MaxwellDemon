@@ -15,9 +15,13 @@ private:
   vector<Particle> particles;
   SDL_Rect bounds;
   void renderParticle(SDL_Renderer*, Particle*);
+  float totalEnergy;
+  float barrierX;
 public:
-  ParticleManager(SDL_Rect);
+  ParticleManager(SDL_Rect, float);
   void renderParticles(SDL_Renderer*);
+  void updateParticle(Particle*);
+  void updateParticles();
 };
 
 #endif

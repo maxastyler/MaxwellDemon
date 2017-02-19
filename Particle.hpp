@@ -3,6 +3,7 @@
 
 #include "Vector.hpp"
 #include <math.h>
+#include <iostream>
 
 class Particle
 {
